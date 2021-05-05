@@ -17,7 +17,6 @@ class Eruchi(commands.Bot):
         await self.session.close()
         await super().close()
 
-
 loadup_modules = [
     'Events',
     'Fun',
@@ -31,6 +30,8 @@ bot = Eruchi(
         154433538375024640
     ]
 )
+
+bot.remove_command('help')
 
 if __name__ == '__main__':
 
