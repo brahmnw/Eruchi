@@ -20,6 +20,8 @@ class Eruchi(commands.Bot):
 
 loadup_modules = [
     'Events',
+    'Fun',
+    'Games',
     'Owner'
 ]
 
