@@ -126,6 +126,7 @@ venv.bak/
 dmypy.json
 
 # Pyre type checker
-.pyre/
+.pyre/git config --global user.name "Your Name"
 
 info.json
+/data
