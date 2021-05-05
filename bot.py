@@ -18,6 +18,7 @@ class Eruchi(commands.Bot):
         await super().close()
 
 loadup_modules = [
+    'Base',
     'Events',
     'Fun',
     'Games',

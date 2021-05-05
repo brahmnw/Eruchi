@@ -11,7 +11,7 @@ class Events(commands.Cog):
     async def on_ready(self):  
         print('Connected to Discord and ready.')
         print(f'Currently in {len(self.bot.guilds)} guilds.')
-        await self.bot.change_presence(activity=discord.Game("chitanda :)"))
+        await self.bot.change_presence(activity=discord.Game("whats good"))
 
 def setup(bot):
     bot.add_cog(Events(bot))
