@@ -19,6 +19,7 @@ class Events(commands.Cog):
 
         ignore_errors = [
             commands.CommandNotFound
+            commands.NotOwner
         ]
 
         for error in ignore_errors:
