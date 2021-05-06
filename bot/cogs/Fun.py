@@ -17,5 +17,38 @@ class Fun(commands.Cog):
 
         await ctx.send(embed=embed)
 
+    @commands.command()
+    async def sus(self, ctx, mention: discord.User):
+
+        sus_percent = random.randint(1, 100)
+
+        color = discord.Colour.gold()
+
+        if sus_percent >= 90:
+            color = discord.Colour.from_rgb(240, 112, 103)
+
+        elif sus_percent >= 75:
+            color = discord.Colour.from_rgb(240, 174, 103)
+
+        elif sus_percent >= 50:
+            color = discord.Colour.from_rgb(235, 228, 155)
+
+        elif sus_percent >= 25:
+            color = discord.Colour.from_rgb(195, 235, 155)
+
+        elif sus_percent >= 0:
+            color = discord.Colour.from_rgb(158, 235, 155)
+
+        embed = discord.Embed(
+            description = f"<:sus:814375564889948160> {mention.display_name} is {sus_percent}% suspicious!!",
+            color = color
+        )
+        
+        await ctx.send(
+            mention.mention,
+            embed=embed
+        )
+
+
 def setup(bot):
     bot.add_cog(Fun(bot))
