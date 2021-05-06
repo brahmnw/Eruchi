@@ -53,6 +53,19 @@ class Games(commands.Cog):
         return board_text, gboard
 
     def xo_check_win(self, ctx, board):
+
+        standard_board = {
+            '1': ':one:',
+            '2': ':two:',
+            '3': ':three:',
+            '4': ':four:',
+            '5': ':five:',
+            '6': ':six:',
+            '7': ':seven:',
+            '8': ':eight:',
+            '9': ':nine:'
+        }
+
         winning_combos = [
             [board['1'], board['2'], board['3']],
             [board['4'], board['5'], board['6']],
@@ -71,6 +84,14 @@ class Games(commands.Cog):
             
             if a == b == c:
                 return a
+
+        i = 0
+        for key in standard_board:
+            if standard_board[key] != board[key]:
+                i = i + 1
+
+        if i >= 9:
+            return 'draw'
 
         return None
 
@@ -167,6 +188,11 @@ class Games(commands.Cog):
             elif win_con == ':o:':
                 winner = opponent
                 await message.edit(embed=embed.set_footer(text=f"🏆 {winner.display_name} (⭕) won the game!"))
+                await message.clear_reactions()
+                game_state = 1
+
+            elif win_con == 'draw':
+                await message.edit(embed=embed.set_footer(text=f"😔 No one wins, it's a draw..."))
                 await message.clear_reactions()
                 game_state = 1
 

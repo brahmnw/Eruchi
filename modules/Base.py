@@ -19,9 +19,11 @@ class Base(commands.Cog):
 [Commands](https://github.com/MrBrahm/Eruchi/wiki/Commands)
 [Github](https://github.com/MrBrahm/Eruchi)
 [Support Server](https://discord.gg/QN4KfD4zsc)
+[Invite](https://discord.com/api/oauth2/authorize?client_id=839147906500919306&permissions=8&scope=bot)
             """) \
-            .add_field(name="Servers", value=len(self.bot.user.guilds))
-            .set_footer(text=f'Made by Brahm#8516 | ID: {self.bot.user.id}')
+            .add_field(name="Servers", value=len(self.bot.guilds)) \
+            .add_field(name="Credits", value="Made by Brahm#8516") \
+            .set_footer(text=f'ID: {self.bot.user.id}')
         await ctx.send(embed=embed)
 
 
