@@ -17,7 +17,7 @@ class Eruchi(commands.Bot):
         await self.session.close()
         await super().close()
 
-loadup_modules = [
+loadup_cogs = [
     'Base',
     'Events',
     'Fun',
@@ -36,10 +36,10 @@ bot.remove_command('help')
 
 if __name__ == '__main__':
 
-    for module in loadup_modules:
-        bot.load_extension(f"modules.{module}")
+    for cog in loadup_cogs:
+        bot.load_extension(f"cogs.{cog}")
         
-    with open('info.json', 'r') as f:
+    with open('tokens.json', 'r') as f:
         bot_info = json.loads(f.read())
     
     bot.info = bot_info

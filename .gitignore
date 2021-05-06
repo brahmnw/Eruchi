@@ -129,4 +129,4 @@ dmypy.json
 .pyre/git config --global user.name "Your Name"
 
 info.json
-/data
+bot/data
