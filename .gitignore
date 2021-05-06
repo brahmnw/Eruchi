@@ -129,5 +129,5 @@ dmypy.json
 .pyre/git config --global user.name "Your Name"
 
 info.json
-tokens.json
+bot/tokens.json
 bot/data
