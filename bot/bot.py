@@ -18,11 +18,11 @@ class Eruchi(commands.Bot):
         await super().close()
 
 loadup_cogs = [
-    'Base',
-    'Events',
-    'Fun',
-    'Games',
-    'Owner'
+    'base',
+    'events',
+    'fun',
+    'games',
+    'owner'
 ]
 
 bot = Eruchi(

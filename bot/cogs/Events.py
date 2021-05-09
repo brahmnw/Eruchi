@@ -18,7 +18,7 @@ class Events(commands.Cog):
     async def on_command_error(self, ctx, exception):
 
         ignore_errors = [
-            commands.CommandNotFound
+            commands.CommandNotFound,
             commands.NotOwner
         ]
 
