@@ -72,5 +72,5 @@ if __name__ == '__main__':
 
     profile = ProfileHandler('01', directory='temp/01.json')
     profile.edit('bio', 'you found an easter egg, hello!!')
-    profile.add_link('link', 'link')
+    profile.add_link('link', 'test_link')
     print(profile.user_data)
