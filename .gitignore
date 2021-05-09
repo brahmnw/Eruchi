@@ -131,3 +131,4 @@ dmypy.json
 info.json
 bot/tokens.json
 bot/data
+bot/cogs/util/temp

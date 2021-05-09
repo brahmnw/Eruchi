@@ -9,9 +9,6 @@ class LinksFull(Exception):
 class ProfileHandler:
 
     def __init__(self, user_id, discord_profile: discord.Member, directory=None):
-        print('!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!')
-        print(discord_profile)
-        print('!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!')
 
         if discord_profile is not None:
             discord_avatar = str(discord_profile.avatar_url)
@@ -24,6 +21,7 @@ class ProfileHandler:
             'profile': {
                 'bio': 'No bio provided.',
                 'avatar': discord_avatar,
+                'color': [149, 239, 252],
                 'links': []
             }
         }
@@ -37,7 +35,6 @@ class ProfileHandler:
         if os.path.exists(self.directory):
             f = open(self.directory, mode='r')
             self.user_data = json.load(f)
-            print('Path Exists')
 
         else:
 
@@ -61,6 +58,22 @@ class ProfileHandler:
             self.user_data['profile']['links'].append(link)
 
         self.apply()
+
+    def remove_link(self, title):
+
+        new_links = []
+
+        for link in self.user_data['profile']['links']:
+
+            if link[0] == title:
+                pass
+
+            else:
+                new_links.append(link)
+
+        self.user_data['profile']['links'] = new_links
+        self.apply()
+
 
     def edit(self, attribute, value):
 

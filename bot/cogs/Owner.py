@@ -39,6 +39,19 @@ class Owner(commands.Cog):
         else:
             await ctx.send(f":hammer: **Reloaded** `{module}`!")
 
+    @_owner.command(aliases=['ul'], hidden=True)
+    async def _unload(self, ctx, module):
+
+        try:
+            self.bot.unload_extension(f"cogs.{module}")
+        
+        except Exception as e:
+            print(e)
+            await ctx.send(f":hammer: `{module}` could not be successfully unloaded.")
+
+        else:
+            await ctx.send(f":hammer: **Unloaded** `{module}`!")
+
     @_owner.command(hidden=True)
     async def _presence(self, ctx, *, presence):
         await self.bot.change_presence(activity=discord.Game(presence))
