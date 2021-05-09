@@ -8,10 +8,13 @@ class LinksFull(Exception):
 
 class ProfileHandler:
 
-    def __init__(self, user_id, discord_profile=None, directory=None):
+    def __init__(self, user_id, discord_profile: discord.Member, directory=None):
+        print('!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!')
+        print(discord_profile)
+        print('!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!')
 
         if discord_profile is not None:
-            discord_avatar = discord_profile.avatar()
+            discord_avatar = str(discord_profile.avatar_url)
 
         else:
             discord_avatar = 'https://a.ppy.sh'
@@ -67,10 +70,6 @@ class ProfileHandler:
         self.user_data['profile'][attribute] = value
         self.apply()
 
+    def get(self):
+        return self.user_data
 
-if __name__ == '__main__':
-
-    profile = ProfileHandler('01', directory='temp/01.json')
-    profile.edit('bio', 'you found an easter egg, hello!!')
-    profile.add_link('link', 'test_link')
-    print(profile.user_data)
