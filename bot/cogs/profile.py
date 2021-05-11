@@ -21,6 +21,8 @@ class Profile(commands.Cog):
                 member = ctx.author
                 member_id = ctx.author.id
 
+            member_id = member.id
+
             ph = ProfileHandler(member_id, member)
             values = ph.get()
             color = discord.Colour.from_rgb(values['profile']['color'][0], values['profile']['color'][1], values['profile']['color'][2])
