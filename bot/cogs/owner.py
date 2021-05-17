@@ -2,6 +2,9 @@ import discord
 from discord.ext import commands
 import aiohttp
 import asyncio
+from time import time
+import sys
+import os
 
 class Owner(commands.Cog):
 
@@ -61,6 +64,15 @@ class Owner(commands.Cog):
     async def _start_aiohttp(self, ctx):
         self.bot.session = aiohttp.ClientSession()
         await ctx.send(f"Started `aiohttp.ClientSession()`.")
+
+    @_owner.command()
+    async def list_servers(self, ctx):
+        
+        servers = []
+        for s in self.bot.guilds:
+            servers.append(s.name)
+
+        await ctx.send('\n'.join(servers))
 
 def setup(bot):
     bot.add_cog(Owner(bot))
