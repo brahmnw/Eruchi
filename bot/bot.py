@@ -22,6 +22,7 @@ loadup_cogs = [
     'events',
     'fun',
     'games',
+    'sauceroulette',
     'owner'
 ]
 
