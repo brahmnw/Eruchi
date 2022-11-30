@@ -1,7 +1,3 @@
 # Eruchi
 
-the discord bot of all time
-
-## Purpose
-
-idk
+retired unmaintained and discontinued discord bot
